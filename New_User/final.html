@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="wide wow-animation">
+<head>
+ 
+<title>New User</title>
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+ 
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i%7COpen+Sans:400,600,700">
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+		<![endif]-->
+</head>
+<header class="page-header">
+ 
+ 
+<div class="rd-navbar-wrap">
+<nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-md-stick-up-offset="18px" data-lg-stick-up-offset="18px" class="rd-navbar rd-navbar-minimal">
+<div class="rd-navbar-inner">
+ 
+<div class="rd-navbar-panel">
+ 
+<button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
+<div class="rd-navbar-panel-inner">
+ 
+<div class="rd-navbar-brand"><a href="index.html" class="brand-logo"><img src="MIMO.jpg" alt="" class="img-responsive center-block"></a></div>
+<div class="rd-navbar-nav-wrap">
+ 
+<ul class="rd-navbar-nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a>
+ 
+
+</li>
+<li><a href="faq.html">FAQS</a></li>
+<li class="active"><a href="contacts.html">Contacts</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<html>
+<head>
+<style>
+
+body
+{
+
+}
+
+h1
+{
+
+color: white;
+text-align: center;
+}
+.button{
+    background-color: rgb(226, 232, 13);
+    color: white;
+	border-radius:8px;
+    padding: 14px 20px;
+    margin: 8px 2px;
+    border: none;
+    cursor: pointer;
+    width: 120px;
+	
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+<form action = "Newuserreg.php" method = "POST">
+
+<table style="width:100%">
+
+<center>
+<tr><td height="500" valign="top"></td>
+<td>
+
+
+<table height="400" align="center">
+<tr>
+<h4 color:white align="center">NEW USER</h4>
+</tr>
+
+<tr><td><font size="5" >
+Name</td>
+<td><input type="TEXT" name="txtName" id="txtID" required></input></font>
+ <span class="error">*<?php echo $nameErr;?></span>
+  <br><br>
+</td>
+
+</tr>
+<tr><td><font size="5">
+Address</td>
+<td><input type="TEXT" name="txtAddress" id="txtAddress"></input></font>
+</td></tr>
+<tr><td><font size="5">
+Date Of Birth</td>
+<td><input type="date" name="bday" max="2050-12-31"></input></font>
+
+</td></tr>
+
+<tr><td><font size="5">
+Email Id</td>
+<td><input type="email" name="txtEmail" id="txtEmail"></input></font>
+<span class="error">* <?php echo $emailErr;?></span>
+</td></tr>
+<tr><td><font size="5">
+Password</td>
+<td><input type="password" name="txtPassword" id="txtPassword"></input></font>
+<span class="error">* <?php echo $passErr;?></span>
+</td></tr>
+
+<tr><font size="20">
+<td></td><td><input type="SUBMIT" name="btnSubmit" class="button" id="btnSubmit" value="SUBMIT"/></font></td>
+</tr>
+
+</center>
+</table>
+</form>
+</body>
+<footer style="background: #000 url(images/background-04-2050x677.jpg) center/cover no-repeat;" class="page-footer">
+<div class="bg-overlay-gray-base">
+<div class="shell section-65 section-md-top-110 section-md-bottom-200">
+<div class="range range-xs-center range-xs-middle range-md-justify">
+<div class="cell-sm-10 cell-md-8 cell-lg-7 text-sm-left">
+<h3 class="text-white">Get In Touch</h3>
+<p class="offset-md-top-50 text-left">Our website is made to become your reliable guide being organized in a simple manner, so you can easily find the needed proposition with true-to-life photos and comprehensive descriptions. We are always ready to get in touch and answer all your questions. Your trust will be justified.</p>
+<div class="range range-xs-center text-left">
+<div class="cell-sm-6">
+<p class="text-big-20 text-white">28 Jackson Blvd Ste 1020 <br class="veil reveal-lg-inline-block"> Chicago, IL 60604-2340</p>
+</div>
+<div class="cell-sm-6">
+<div>
+<p class="text-big-20 text-white">Call Us Toll Free:</p>
+</div>
+<div class="offset-top-0">
+<h4 class="p font-default text-regular"><span class="icon material-design-ico material-design-phone370 text-primary text-middle"></span><a href="callto:#" class="inset-left-5 reveal-inline-block">+1 (504) 123 2323</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="cell-sm-10 cell-md-4 cell-lg-3 text-md-right offset-top-40 offset-md-top-0">
+ 
+<ul class="list-inline offset-lg-top-100">
+<li class="text-center"><a href="contacts.html#" class="icon icon-lg icon-circle icon-gray-dark fa fa-instagram"></a></li>
+<li class="text-center"><a href="contacts.html#" class="icon icon-lg icon-circle icon-gray-dark fa fa-twitter"></a></li>
+<li class="text-center"><a href="contacts.html#" class="icon icon-lg icon-circle icon-gray-dark fa fa-facebook"></a></li>
+</ul>
+<p class="offset-lg-top-35 text-white">&#169; <span id="copyright-year"></span> &#124; <a href="privacy.html" class="text-white">Privacy Policy</a></p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+ 
+<div id="form-output-global" class="snackbars"></div>
+ 
+<div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
+<div class="pswp__bg"></div>
+<div class="pswp__scroll-wrap">
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<div class="pswp__counter"></div>
+<button title="Close (Esc)" class="pswp__button pswp__button--close"></button>
+<button title="Share" class="pswp__button pswp__button--share"></button>
+<button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
+<button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
+<button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
+<div class="pswp__caption">
+<div class="pswp__caption__cent"></div>
+</div>
+</div>
+</div>
+</div>
+ 
+<script src="js/core.min.js"></script>
+<script src="js/script.js"></script>
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9FT69"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager -->
+
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+<style>
+img{
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	}
+body
+{
+background: url(image6.jpeg);
+}
+
+h1
+{
+background: url(image2.jpg);
+color: white;
+text-align: center;
+}
+.button{
+    background-color: rgb(226, 232, 13);
+    color: white;
+	border-radius:8px;
+    padding: 14px 20px;
+    margin: 8px 2px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+<form action = "Newuserreg.php" method = "POST">
+
+<table style="width:100%">
+<center>
+<tr><td width="60%" background="image3.jpeg" valign="top"></td>
+<td width="40%" >
+<table>
+<tr>
+<h1 color:white>NEW USER</h1>
+</tr>
+
+<tr><td><font size="5" >
+Name:</td>
+<td><input type="TEXT" name="txtName" id="txtID" required></input></font>
+ <span class="error">*<?php echo $nameErr;?></span>
+  <br><br>
+</td>
+
+</tr>
+<tr><td><font size="5">
+Address:</td>
+<td><input type="TEXT" name="txtAddress" id="txtAddress"></input></font>
+</td></tr>
+<tr><td><font size="5">
+Date Of Birth:</td>
+<td><input type="date" name="bday" max="2050-12-31" required></input></font>
+
+</td></tr>
+
+<tr><td><font size="5">
+Email Id:</td>
+<td><input type="email" name="txtEmail" id="txtEmail" required></input></font>
+<span class="error">* <?php echo $emailErr;?></span>
+</td></tr>
+<tr><td><font size="5">
+Password:</td>
+<td><input type="password" name="txtPassword" id="txtPassword" required></input></font>
+<span class="error">* <?php echo $passErr;?></span>
+</td></tr>
+
+<tr><font size="30">
+<td><input type="SUBMIT" name="btnSubmit" class="button" id="btnSubmit" value="SUBMIT"/></font></td>
+</tr>
+
+</table>
+</center>
+</body>
+</html>
