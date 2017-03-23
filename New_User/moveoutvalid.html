@@ -1,0 +1,184 @@
+
+<html>
+<head>
+<?php
+
+$cityErr = $date_of_leavingErr = $room_addressErrErr = $room_sizeErr = $room_setupErr = $room_costErr = $otherhousewaresErr"";
+$city = $date_of_leavingErr = $room_address = $room_size = $room_setup = $room_cost = $otherhousewares"";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["city"])) {
+    $cityErr = "City is required";
+  } else {
+    $city = test_input($_POST["city"]);
+  }
+  
+  if (empty($_POST["date_of_leaving"])) {
+    $date_of_leavingErr	= "date of leaving is required";
+  }else {
+    $date_of_leaving = test_input($_POST["date_of_leaving"]);
+    
+    }
+  if (empty($_POST["room_address"])) {
+    $room_adressErr = "room address is required";
+  } else {
+    $room_address = test_input($_POST["room_address"]);
+  }
+  }
+    
+  if (empty($_POST["room_size"])) {
+    $room_sizeErr = "room size is required";
+  } else {
+    $room_size = test_input($_POST["room_size"]);
+  }
+
+  if (empty($_POST["room_setup"])) {
+    $room_setupErr = "room setup is required";
+  } else {
+    $room_setup = test_input($_POST["room_setup"]);
+  }
+
+  if (empty($_POST["room_cost"])) {
+    $room_costErr = "room cost is required";
+  } else {
+    $room_cost = test_input($_POST["room_cost"]);
+  }
+
+  if (empty($_POST["otherhousewares"])) {
+    $otherhousewaresErr = "other Housewares is required";
+  } else {
+    $otherhousewares = test_input($_POST["otherhousewares"]);
+  }
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+<style>
+
+body
+{
+background: url(image13.png);
+}
+
+h1
+{
+color: black;
+text-align: center;
+}
+
+
+</style>
+</head>
+
+<?php
+   
+   if(isset($_POST["btnSubmit"]))
+   {
+    $city = $_POST["city"];
+	$date_of_leaving = $_POST["date_of_leaving"];
+	$room_address = $_POST["room_address"];
+	$room_size = $_POST["room_size"];
+	$room_setup = $_POST["room_setup"];
+    $room_cost = $_POST["room_cost"];
+	$otherhousewares = $_POST["otherhousewares"];
+   
+   $dbhost = 'localhost';
+   $dbuser = 'root';
+   $dbpass = '';
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   
+   if(! $conn ) {
+      die('Could not connect: ' . mysql_error());
+   }
+   $sql = "INSERT INTO move_out " . " (City,Date_of_leaving,Room_address,Room_size,Room_setup,Room_cost,Otherhousewares) " . " VALUES ( '$city', '$date_of_leaving', '$Room_address', '$Room_size', '$Room_setup', '$Room_cost', '$Otherhousewares');";
+      
+   mysql_select_db('mimo');
+   $retval = mysql_query( $sql, $conn );
+   
+   if(! $retval ) {
+      die('Could not enter data: ' . mysql_error());
+   }
+   
+   echo "Entered data successfully\n";
+   }
+   mysql_close($conn);
+?>
+
+<body>
+<center>
+<table style="width:100%">
+
+<h1><table></h1>
+ <form action = "moveoutvalid.html" method = "POST">
+<tr>
+<h1 color:white>MOVE OUT</h1>
+</tr>
+
+<tr><td><font size="5" >
+City:</td>
+<td><input type="TEXT" name="txtCity" id="txtCity" required></input></font>
+<span class="error">*<?php echo $nameErr;?></span>
+  <br><br>
+</td>
+
+</tr>
+<tr><td><font size="5">
+Date of Leaving:</td>
+<td><input type="date" name="Leaving" max="2050-12-31" required ></input></font>
+<span class="error">*<?php echo $nameErr;?></span>
+<br><br>
+</td>
+
+</tr>
+<tr><td><font size="5">
+Room Address:</td>
+<td><input type="TEXT" name="txtAddress" id="txtAddress" required></input></font>
+<span class="error">*<?php echo $nameErr;?></span>
+<br><br>
+</td>
+
+</tr>
+<tr><td><font size="5">
+Room Size:</td>
+<td><input type="TEXT" name="txtSize" id="txtSize" ></input></font>
+</td>
+
+</tr>
+<tr><td><font size="5">
+
+Room Setup:</td>
+<td><input type="TEXT" name="txtSetup" id="txtSetup"></input></font>
+</td>
+
+</tr>
+<tr><td><font size="5">
+Room Cost:</td>
+<td><input type="cost" name="txtCost" id="txtCost" required></input></font>
+<span class="error">*<?php echo $nameErr;?></span>
+<br><br>
+</td>
+
+</tr>
+<tr><td><font size="5">
+Otherhousewares:</td>
+<td><input type="TEXT" name="txtOther" id="txtOther"></input></font>
+</td>
+
+</tr>
+<tr><td><font size="5">
+
+<tr><font size="30">
+<td><input type="SUBMIT" name="btnSubmit" onclick="alert('Data Submitted')" id="btnSubmit" value="SUBMIT"/></font></td>
+</tr>
+
+</table>
+</center>
+</body>
+</html>
+
+

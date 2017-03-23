@@ -1,0 +1,149 @@
+
+<html>
+<head>
+<?php
+
+$nameErr = $emailErr = $dobErr = $addErr = $passErr"";
+$name = $email = $dob = $address = $password"";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  }else {
+    $email = test_input($_POST["email"]);
+    
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format"; 
+    }
+
+  }
+    
+  if (empty($_POST["address"])) {
+    $addErr = "Address is required";
+  } else {
+    $address = test_input($_POST["address"]);
+  }
+
+  if (empty($_POST["dob"])) {
+    $dobErr = "Date of Birth is required";
+  } else {
+    $dob = test_input($_POST["dob"]);
+  }
+
+  if (empty($_POST["password"])) {
+    $passrErr = "Password is required";
+  } else {
+    $password = test_input($_POST["password"]);
+  }
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+<style>
+
+body
+{
+background-color: skyblue;
+}
+
+h1
+{
+color: white;
+text-align: center;
+}
+
+
+</style>
+</head>
+
+<?php
+   
+   if(isset($_POST["btnSubmit"]))
+   {
+   $name = $_POST["Name"];
+	$addr = $_POST["Address"];
+	$email = $_POST["Email"];	
+	$pwd = $_POST["Password"];
+   
+   $dbhost = 'localhost';
+   $dbuser = 'root';
+   $dbpass = '';
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   
+   if(! $conn ) {
+      die('Could not connect: ' . mysql_error());
+   }
+   $sql = "INSERT INTO new_user " . " (Name,Address,DOB,Email_id,Password) " . " VALUES ( '$name', '$addr', NOW(), '$email','$pwd');";
+      
+   mysql_select_db('mimo');
+   $retval = mysql_query( $sql, $conn );
+   
+   if(! $retval ) {
+      die('Could not enter data: ' . mysql_error());
+   }
+   
+   echo "Entered data successfully\n";
+   }
+   mysql_close($conn);
+?>
+
+<body>
+<center>
+<table style="width:100%">
+
+<h1><table></h1>
+ <form action = "Newuserreg.html" method = "POST">
+<tr>
+<h1 color:white>NEW USER</h1>
+</tr>
+
+<tr><td><font size="5" >
+Name:</td>
+<td><input type="TEXT" name="txtName" id="txtID"></input></font>
+ <span class="error">* <?php echo $nameErr;?></span>
+  <br><br>
+</td>
+
+</tr>
+<tr><td><font size="5">
+Address:</td>
+<td><input type="TEXT" name="txtAddress" id="txtAddress"></input></font>
+</td></tr>
+<tr><td><font size="5">
+Date Of Birth:</td>
+<td><input type="date" name="bday" max="2050-12-31"></input></font>
+
+</td></tr>
+<tr><td><font size="5">
+Email Id:</td>
+<td><input type="TEXT" name="txtEmail" id="txtEmail"></input></font>
+<span class="error">* <?php echo $emailErr;?></span>
+</td></tr>
+<tr><td><font size="5">
+Password:</td>
+<td><input type="password" name="txtPassword" id="txtPassword"></input></font>
+<span class="error">* <?php echo $passErr;?></span>
+</td></tr>
+
+<tr><font size="30">
+<td><input type="SUBMIT" name="btnSubmit" onclick="alert('Data Submitted')" id="btnSubmit" value="SUBMIT"/></font></td>
+</tr>
+
+</table>
+</center>
+</body>
+</html>
+
+
